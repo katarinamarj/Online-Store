@@ -1,4 +1,20 @@
-# AngularShoppApp
+This is an online store built with Angular where users can search, browse, and order products.
+
+![home](https://github.com/user-attachments/assets/57b6895b-5918-4451-82da-fc4b02b32954)
+
+![catalog](https://github.com/user-attachments/assets/f4423373-19df-4895-b5c5-e90cd52670dc)
+
+![login](https://github.com/user-attachments/assets/1480cd16-9f8b-4db8-963b-de1e24b52a73)
+
+![signup](https://github.com/user-attachments/assets/9559f491-60b5-41fd-abd4-c018e5ff59e9)
+
+![cart](https://github.com/user-attachments/assets/b2ec5410-0db5-4d42-923f-771456ea9bf7)
+
+![payment](https://github.com/user-attachments/assets/acb3ac3c-e018-45e3-ba23-468ad5c3651f)
+
+![userpanel](https://github.com/user-attachments/assets/ce088485-4fcc-4d3a-bf76-d0510cdc8c4d)
+
+# AngularShopApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.7.
 
