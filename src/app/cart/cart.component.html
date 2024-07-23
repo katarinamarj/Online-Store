@@ -1,0 +1,40 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <div class="cart-container" fxLayout="row wrap" fxLayoutAlign="start start" fxLayoutGap="10px">
+    <div *ngFor="let item of cartItems; let i = index" class="cart-item">
+      <mat-card fxLayout="row" class="cart-item-card">
+        <img style="width: 150px; border-radius: 2%;" class="cart-item-image" [src]="item.image" alt="{{ item.name }}">
+        <div class="cart-item-details">
+          <mat-card-header>
+            <mat-card-title>{{ item.name }}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p style="margin-bottom: 0px;">Type: {{ item.type }}</p>
+            <p style="margin-bottom: 0px;">Size: {{ item.size }}</p>
+            <p style="margin-bottom: 0px;">Color: {{ item.color }}</p>
+            <p style="margin-bottom: 0px;">Material: {{ item.material }}</p>  
+            <p style="font-weight: bold; font-size: 16px;">Price ${{ item.price }}</p>
+          </mat-card-content>
+          <mat-card-actions style="margin-top: 50%;">
+            
+            <button mat-button color="warn" (click)="removeFromCart(i)">Remove</button>
+          </mat-card-actions>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+  
+  <div *ngIf="cartItems.length > 0" class="cart-summary">
+    <h4>Total Price: ${{ getTotalPrice() }}</h4>
+    <button mat-raised-button color="primary" (click)="checkout()">Proceed to Checkout</button>
+  </div>
+  
+  <div *ngIf="cartItems.length === 0" class="empty-cart">
+    <p>Your cart is empty.</p>
+  </div>
+  
+  
+  
+
+  
+  

@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<section fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center" style="margin-bottom: 6.5rem;" >
+  <div fxLayout="column" fxLayoutAlign="center start" fxLayoutGap="1rem" style="margin-top: 5rem;">
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)" fxLayout="column">
+      <mat-form-field style="width: 300px;">
+        <input type="email" matInput placeholder="Your email" name="email" ngModel required #emailInput="ngModel">
+        <mat-error *ngIf="emailInput.hasError('required')">Field should not be empty</mat-error>
+        <mat-error *ngIf="emailInput.hasError('email')">Please enter a valid email</mat-error>
+      </mat-form-field>
+      
+      <mat-form-field style="width: 300px;">
+        <input type="password" matInput placeholder="Your password" name="password" ngModel required #passInput='ngModel' minlength="8">
+        <mat-hint align="end">{{passInput.value?.length}} / 8 </mat-hint>
+        <mat-error *ngIf="passInput.hasError('required')">Field should not be empty</mat-error>
+        <mat-error *ngIf="passInput.hasError('pattern')">Password should contain a capital letter at the beginning, one number, and be at least 8 characters long.</mat-error>        </mat-form-field>
+      
+        <a routerLink="/signup" style="text-decoration:underline ; color: rgb(63, 62, 62);">Register if you don't have an account?</a>
+        
+        <button type="submit" mat-raised-button color="primary" style="margin-top: 10px; background-color: rgb(247, 117, 117); width: 200px;">Submit</button>
+    </form>
+      
+   </div>
+ </section>
+
+
+
+
+  

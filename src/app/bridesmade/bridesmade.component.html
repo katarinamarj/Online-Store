@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div fxLayout="row wrap" fxLayoutGap="16px" style="margin: 1%; justify-content: center;">
+    <mat-card class="product-card" *ngFor="let product of products" style="border: 1px solid #ccc; border-radius: 5px; padding: 10px; background-color: white; box-sizing: border-box;">
+        <mat-card-header>
+        </mat-card-header>
+        <img mat-card-image [src]="product.image" [alt]="product" >
+        <div *ngIf="product.showDetails" class="product-details" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.5); color: white; display: flex; align-items: center; justify-content: center; text-align: center;">
+          <div *ngIf="product.showDetails" class="product-details" style="background-color: rgba(86, 85, 85, 0); text-align: left;">
+            <p><i style="font-weight:500;">Name:</i> {{ product.name }}</p>
+            <p><i style="font-weight:500;">Type:</i> {{ product.type }}</p>
+            <p><i style="font-weight:500;">Size:</i> {{ product.size }}</p>
+            <p><i style="font-weight:500;">Color:</i>{{product.color}}</p>
+            <p><i style="font-weight:500;">Material:</i>{{product.material}}</p>
+            <p><i style="font-weight:500;">Price:</i>{{product.price}}</p>
+            
+          </div>
+      </div>
+        <mat-card-actions style="display: flex; flex-direction: column; align-items: center;">
+          <button class="more-button" mat-button (mouseenter)="toggleDetails(product, true)" (mouseleave)="toggleDetails(product, false)">More</button>
+            <button class="cart-button" mat-button (click)="addToCart(product)">
+                <mat-icon class="cart-icon">add_shopping_cart</mat-icon> Add to cart
+            </button>
+        </mat-card-actions>
+    </mat-card>
+</div>
+
+
+ 
+  
+
+  
+
+
+  
+    
+    
+
+  

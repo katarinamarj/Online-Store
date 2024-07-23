@@ -1,0 +1,22 @@
+.header-section {
+    display: flex;
+    align-items: center;
+  }
+  
+  .header-section a {
+    margin-right: 10px;
+    color: rgb(89, 89, 89);
+  }
+  
+  .header-section a:last-child {
+    margin-right: 0;
+  }
+  
+  .user-auth li {
+    margin-right: 10px;
+  }
+  
+  .user-auth li:last-child {
+    margin-right: 0;
+  }
+  

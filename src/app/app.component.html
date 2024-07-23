@@ -1,0 +1,119 @@
+<div style="background-color: #f5f5f5; padding: 10px;">
+
+  <!--HEADER-->
+  <mat-toolbar color="grey" style="position: relative; display: flex; justify-content: space-between; padding: 10px;">
+    <div style="display: flex; align-items: center;">
+      <a href="https://www.facebook.com" target="_blank" style="margin-right: 10px;">
+        <i class="fa fa-facebook-square" style="font-size: 20px; color: rgb(89, 89, 89);"></i>
+      </a>
+      <a href="https://www.instagram.com" target="_blank" style="margin-right: 10px;">
+        <i class="fa fa-instagram" aria-hidden="true" style="font-size: 20px; color: rgb(89, 89, 89);"></i>
+      </a>
+      <a href="https://www.snapchat.com" target="_blank" style="margin-right: 10px;">
+        <i class="fa fa-pinterest" aria-hidden="true" style="font-size: 20px; color: rgb(89, 89, 89);"></i>
+      </a>
+      <a href="https://www.twitter.com" target="_blank" style="margin-right: 10px;">
+        <i class="fa fa-twitter-square" style="font-size: 20px; color: rgb(89, 89, 89);"></i>
+      </a>
+    </div>
+  
+    <div style="position: absolute; left: 50%; transform: translateX(-50%);">
+      <img src="https://cdn.afarose.com/assets/images/afarose_logo.svg" alt="Logo" style="height: 30px;">
+    </div>
+  
+    <div style="display: flex; align-items: center;">
+      <i *ngIf="router.url !== '/cart'" routerLink="/cart" class="fa fa-shopping-cart" aria-hidden="true" style="font-size: 25px; color: rgb(86, 85, 85); margin-right: 10px;"></i>
+      <ul style="list-style-type: none; margin: 0; padding: 0; display: flex; align-items: center;">
+        <li *ngIf="authService.isLoggedIn()" style="margin-right: 10px;">
+          <button mat-raised-button color="pink" routerLink="/userpanel">{{ authService.getUserEmail() }}</button>
+        </li>
+        <ng-container *ngIf="authService.isLoggedIn()">
+          <li style="margin-right: 10px;">
+            <button mat-raised-button color="warn" (click)="logout()">Logout</button>
+          </li>
+        </ng-container>
+        <ng-container *ngIf="!authService.isLoggedIn()">
+          <li style="margin-right: 10px;">
+            <a *ngIf="router.url !== '/login'" routerLink="/login" style="text-decoration: none; color: #555;">Login</a>
+          </li>
+          <li>
+            <a *ngIf="router.url !== '/signup'" routerLink="/signup" style="text-decoration: none; color: #555;">Signup</a>
+          </li>
+        </ng-container>
+      </ul>
+    </div>
+  </mat-toolbar>
+
+  <!--NAV MENI-->
+  <mat-toolbar color="grey" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="2rem" style="width: 100%; height: 2.5rem; text-align: center; border-top: 1px solid rgba(192, 191, 191, 0.694); border-bottom: 1px solid  rgba(192, 191, 191, 0.694);">
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="2rem" style=" align-items: center;">
+      <i routerLink="/" target="_blank" style="font-style: normal; margin-right: 15px; margin-left: 3%; text-decoration: none; color: rgb(86, 85, 85); font-size: 14px;">
+        HOME
+      </i>
+      <i routerLink="/catalog" target="_blank" style="font-style: normal; margin-right: 15px; margin-left: 3%; text-decoration: none; color: rgb(86, 85, 85); font-size: 14px;">
+        CATALOG
+      </i>
+      <i routerLink="/brides" target="_blank" style="margin-right: 15px;font-style: normal; margin-left: 3%; text-decoration: none; color: rgb(86, 85, 85); font-size: 14px;">
+        BRIDES
+      </i>
+      <i routerLink="/bridesmaid" target="_blank" style="margin-right:  15px;font-style: normal; text-decoration: none; color:rgb(86, 85, 85); font-size: 14px;">
+        BRIDESMADE
+      </i>
+      <i routerLink="/moms" target="_blank" style="margin-right: 15px;font-style: normal; text-decoration: none; color: rgb(86, 85, 85); font-size: 14px;">
+        MOMS
+      </i>
+      <i routerLink="/plussize" target="_blank" style="margin-right: 15px;font-style: normal; text-decoration: none; color: rgb(86, 85, 85); font-size: 14px;">
+        PLUS SIZE
+      </i>
+      <i routerLink="/bestsellers" target="_blank" style="margin-right: 15px;font-style: normal; text-decoration: none; color: rgb(86, 85, 85); font-size: 14px;">
+        BEST SELLERS
+      </i>
+      <i routerLink="/accessorise" target="_blank" style="margin-right: 15px;font-style: normal; text-decoration: none; color: rgb(86, 85, 85); font-size: 14px;">
+        ACCESSORIES
+      </i>  
+    </div>
+  </mat-toolbar>
+
+  
+  <router-outlet></router-outlet>
+
+
+  <!--FOOTER-->
+  <mat-toolbar fxLayout="column" fxLayout.xs="column" fxLayoutAlign="center" color="grey" style="height: auto;">
+
+    <div style="flex: 1; text-align: left;" style="margin-left: 4rem; margin-top: 0.5rem; margin-bottom: 1rem;">
+      <img src="https://cdn.afarose.com/assets/images/afarose_logo.svg" alt="Logo" style="height: 30px; margin-top: 2%;">
+    </div>
+  
+    <a style="margin-left: 4rem; font-weight: lighter; font-size: 15px; margin-bottom: 0.5rem;">Whether you're the bride-to-be or a member of the bridal party, AFAROSE has everything you need to your special day unforgettable. Explore our stunning <br>collection of wedding gowns crafted with exquisite detail and elegance. From timeless classics to modern designs, we have the perfect dress to<br> suit every style and silhouette.
+  
+      Browse through our curated selection of bridesmaid dresses, available in a variety of colors and sizes to <br>complement your wedding theme. Complete your look with our range of accessories, from veils and headpieces to shoes and jewelry, <br>adding the perfect finishing touch to your ensemble.</a>
+  
+      <a href="#" style="margin-left: 4rem; color: rgb(247, 117, 117); text-decoration: none; margin-bottom: 0.5rem;"> afarose.rs</a>
+      
+      <div style="flex: 1; display: flex; align-items: center;" style="margin-left: 1.8rem;">
+        <a href="https://www.facebook.com" target="_blank" style="margin-right: 1rem; margin-left: 3%;">
+          <i class="fa fa-facebook-square" style="font-size:35px;color:rgb(89, 89, 89)"></i>
+        </a>
+        <a href="https://www.instagram.com" target="_blank" style="margin-right: 1rem;">
+          <i class="fa fa-instagram" aria-hidden="true" style="font-size:35px; color:rgb(89, 89, 89)"></i>
+        </a>
+        <a href="https://www.snapchat.com" target="_blank" style="margin-right: 1rem;">
+          <i class="fa fa-pinterest" aria-hidden="true" style="font-size:35px; color:rgb(89, 89, 89)"></i>
+        </a>
+        <a href="https://www.twitter.com" target="_blank" style="margin-right: 1rem;">
+          <i class="fa fa-twitter-square" style="font-size:35px; color:rgb(89, 89, 89)"></i>
+        </a>
+      </div>
+      
+    <a  fxLayout="row" fxLayout.xs="column" style="margin-left: 4rem; margin-bottom: 1rem;">
+      <img style="height: 100px;" src="https://static.tildacdn.com/tild6366-3134-4339-b237-623064313239/Frame_2.jpg">
+      <img style="height: 100px;" src="https://www.dfashionmagazine.com/images/events/img_1692265135.jpg">
+      <img style="height: 100px;" src="https://i.vimeocdn.com/video/452691401-94068281b32d8e44b64d3bc2696e5ea05c531d7a695a812c651345e29a437a4a-d_640?f=webp">
+      <img style="height: 100px;" src="https://images.squarespace-cdn.com/content/v1/63320bc728276c563188eaf1/8d9a505e-a866-479a-b3ff-414c92e4e555/Bridal_logo_black.png">
+      <img style="height: 100px;" src="https://www.ww-pedestals.com/wp-content/uploads/2020/02/website-market-2020.jpg">
+      <img style="height: 100px;" src="https://thebrideshow.com/wp-content/uploads/2020/05/bride-logo.png">
+      <img style="height: 100px; width: 170px;" src="https://hips.hearstapps.com/hmg-prod/images/tcx090122snopener-006-1659387416.jpg">
+    </a>
+    </mat-toolbar>
+</div>
