@@ -1,4 +1,4 @@
-This is an online store built with Angular where users can search, browse, and order products.
+This application was developed using Angular and allows users to search, view, and order products in a simple and efficient way.
 
 ![home](https://github.com/user-attachments/assets/57b6895b-5918-4451-82da-fc4b02b32954)
 
